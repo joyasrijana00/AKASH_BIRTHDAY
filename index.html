@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Birthday Akash 💖</title>
   <style>
     body {
@@ -15,40 +16,56 @@
       color: #00ffb3;
       font-family: "Courier New", monospace;
       overflow: hidden;
+      animation: bgShift 12s ease-in-out infinite;
+    }
+
+    @keyframes bgShift {
+      0% { background: radial-gradient(circle at top, #141e30, #0d0d0d); }
+      50% { background: radial-gradient(circle at bottom, #2b1055, #000); }
+      100% { background: radial-gradient(circle at top, #141e30, #0d0d0d); }
     }
 
     h1 {
       color: #ff6ec7;
       text-shadow: 0 0 10px #ff0077, 0 0 30px #ff6ec7;
-      font-size: 2.6rem;
-      margin-bottom: 20px;
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      margin: 15px;
+      text-align: center;
       animation: glow 1.5s infinite alternate;
     }
 
     @keyframes glow {
       from { text-shadow: 0 0 10px #ff0077; }
-      to { text-shadow: 0 0 20px #ff66aa, 0 0 40px #ff0077; }
+      to { text-shadow: 0 0 25px #ff66aa, 0 0 50px #ff0077; }
     }
 
     .console {
       background: #000;
       color: #00ffb3;
-      padding: 30px;
+      padding: 20px;
       border-radius: 10px;
-      width: 85%;
-      max-width: 720px;
-      height: 400px;
+      width: 90%;
+      max-width: 700px;
+      height: 50vh;
       overflow-y: auto;
       box-shadow: 0 0 25px rgba(255, 0, 150, 0.3);
       white-space: pre-wrap;
-      font-size: 1.1rem;
+      font-size: clamp(0.8rem, 3vw, 1.1rem);
+    }
+
+    .footer {
+      margin-top: 10px;
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      color: #cccccc;
+      text-align: center;
     }
 
     .heart {
-      position: absolute;
+      position: fixed;
       color: #ff4b7b;
-      font-size: 22px;
+      font-size: 20px;
       animation: float 6s linear infinite;
+      z-index: 0;
     }
 
     @keyframes float {
@@ -56,10 +73,28 @@
       100% { transform: translateY(-700px) scale(1.4); opacity: 0; }
     }
 
-    .footer {
-      margin-top: 20px;
-      font-size: 1rem;
-      color: #cccccc;
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+      color: #ff5ca1;
+      text-shadow: 0 0 20px #ff007f, 0 0 40px #ff4db8;
+      animation: fadeInOut 4s ease-in-out infinite;
+      text-align: center;
+      z-index: 10;
+    }
+
+    /* Hide scrollbar for mobile look */
+    ::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
     }
   </style>
 </head>
@@ -68,6 +103,10 @@
   <h1>🎂 Happy Birthday, My Love Akash 🎂</h1>
   <div class="console" id="console"></div>
   <div class="footer">Forever yours, Joyasri 💌</div>
+
+  <audio autoplay loop>
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mpeg">
+  </audio>
 
   <script>
     const codeLines = [
@@ -108,23 +147,33 @@
             clearInterval(interval);
             consoleDiv.innerHTML += "\n";
             line++;
-            setTimeout(typeLine, 250);
+            setTimeout(typeLine, 200);
           }
         }, 40);
+      } else {
+        showLovePopup();
       }
     }
+
+    function showLovePopup() {
+      const popup = document.createElement("div");
+      popup.className = "popup";
+      popup.innerHTML = "💞 I LOVE YOU AKASH 💞";
+      document.body.appendChild(popup);
+    }
+
     typeLine();
 
-    // Floating hearts animation
+    // Floating hearts
     setInterval(() => {
       const heart = document.createElement("div");
       heart.className = "heart";
-      heart.textContent = "💖";
+      heart.textContent = Math.random() > 0.5 ? "💖" : "💞";
       heart.style.left = Math.random() * window.innerWidth + "px";
-      heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+      heart.style.animationDuration = (3 + Math.random() * 4) + "s";
       document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6000);
-    }, 300);
+      setTimeout(() => heart.remove(), 7000);
+    }, 250);
   </script>
 
 </body>
