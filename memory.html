@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Sweet Memory 💞</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at top, #141e30, #0d0d0d);
+      color: #ffaad6;
+      font-family: "Courier New", monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: bgShift 12s ease-in-out infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes bgShift {
+      0% { background: radial-gradient(circle at top, #141e30, #0d0d0d); }
+      50% { background: radial-gradient(circle at bottom, #2b1055, #000); }
+      100% { background: radial-gradient(circle at top, #141e30, #0d0d0d); }
+    }
+
+    h1 {
+      margin: 20px 0;
+      color: #ff66b3;
+      text-shadow: 0 0 20px #ff0080, 0 0 40px #ff33aa;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      animation: glow 1.5s infinite alternate;
+      text-align: center;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff0077; }
+      to { text-shadow: 0 0 25px #ff66aa, 0 0 50px #ff0077; }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      width: 90%;
+      max-width: 800px;
+      margin: 20px 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.8);
+    }
+
+    .footer {
+      margin: 15px 0;
+      color: #ccc;
+      text-align: center;
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+    }
+
+    .heart {
+      position: fixed;
+      color: #ff4b7b;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-700px) scale(1.4); opacity: 0; }
+    }
+
+    .back-btn {
+      background: #ff0077;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-bottom: 10px;
+      box-shadow: 0 0 15px #ff0077;
+    }
+
+    .back-btn:hover {
+      background: #ff4da6;
+    }
+
+    /* Fullscreen view */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #ff007f;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💞 Our Sweet Memory 💞</h1>
+  <button class="back-btn" onclick="window.location.href='index.html'">⬅ Back to Birthday Page</button>
+
+  <div class="gallery">
+    <a href="#img1"><img src="12.jpg" alt="Memory 1"></a>
+    <a href="#img2"><img src="00.jpg" alt="Memory 2"></a>
+    <a href="#img3"><img src="89.jpg" alt="Memory 3"></a>
+    <a href="#img4"><img src="23.jpg" alt="Memory 4"></a>
+    <a href="#img5"><img src="55.jpg" alt="Memory 5"></a>
+    <a href="#img6"><img src="99.jpg" alt="Memory 6"></a>
+    <a href="#img7"><img src="44.jpg" alt="Memory 7"></a>
+    <a href="#img8"><img src="33.jpg" alt="Memory 8"></a>
+    <a href="#img9"><img src="11.jpg" alt="Memory 9"></a>
+  </div>
+
+  <div class="footer">Every memory with you is my favorite, Akash 💕</div>
+
+  <!-- Lightbox (Fullscreen Image View) -->
+  <div id="img1" class="lightbox"><img src="12.jpg"></div>
+  <div id="img2" class="lightbox"><img src="00.jpg"></div>
+  <div id="img3" class="lightbox"><img src="89.jpg"></div>
+  <div id="img4" class="lightbox"><img src="23.jpg"></div>
+  <div id="img5" class="lightbox"><img src="55.jpg"></div>
+  <div id="img6" class="lightbox"><img src="99.jpg"></div>
+  <div id="img7" class="lightbox"><img src="44.jpg"></div>
+  <div id="img8" class="lightbox"><img src="33.jpg"></div>
+  <div id="img9" class="lightbox"><img src="11.jpg"></div>
+  
+
+  <script>
+    // Floating hearts animation
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = Math.random() > 0.5 ? "💖" : "💞";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }, 300);
+  </script>
+
+</body>
+</html>
