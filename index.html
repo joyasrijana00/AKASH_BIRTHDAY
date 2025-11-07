@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Akash 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      background: radial-gradient(circle at top, #141e30, #0d0d0d);
+      color: #00ffb3;
+      font-family: "Courier New", monospace;
+      overflow-x: hidden;
+      animation: bgShift 12s ease-in-out infinite;
+    }
+
+    @keyframes bgShift {
+      0% { background: radial-gradient(circle at top, #141e30, #0d0d0d); }
+      50% { background: radial-gradient(circle at bottom, #2b1055, #000); }
+      100% { background: radial-gradient(circle at top, #141e30, #0d0d0d); }
+    }
+
+    h1 {
+      color: #ff6ec7;
+      text-shadow: 0 0 10px #ff0077, 0 0 30px #ff6ec7;
+      font-size: clamp(1.5rem, 5vw, 2.5rem);
+      margin: 15px;
+      text-align: center;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff0077; }
+      to { text-shadow: 0 0 25px #ff66aa, 0 0 50px #ff0077; }
+    }
+
+    .console {
+      background: #000;
+      color: #00ffb3;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 700px;
+      height: 45vh;
+      overflow-y: auto;
+      box-shadow: 0 0 25px rgba(255, 0, 150, 0.3);
+      white-space: pre-wrap;
+      font-size: clamp(0.8rem, 3vw, 1.1rem);
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      margin: 10px 0;
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      color: #cccccc;
+      text-align: center;
+    }
+
+    .heart {
+      position: fixed;
+      color: #ff4b7b;
+      font-size: 20px;
+      animation: float 6s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-700px) scale(1.4); opacity: 0; }
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+      50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(1.8rem, 6vw, 2.5rem);
+      color: #ff5ca1;
+      text-shadow: 0 0 20px #ff007f, 0 0 40px #ff4db8;
+      animation: fadeInOut 4s ease-in-out infinite;
+      text-align: center;
+      z-index: 10;
+    }
+
+    /* 🌈 Rainbow Glow Memory Button */
+    .memory-btn {
+      color: white;
+      background: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+      background-size: 400%;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 20px #ff4da6, 0 0 40px #ff1aa3;
+      animation: rainbow 4s linear infinite, pulse 1.5s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .memory-btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 30px #fff, 0 0 60px #ff33bb;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.9; }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Happy Birthday, My Love Akash 🎂</h1>
+
+  <div class="console" id="console"></div>
+
+  <div class="footer">Forever yours, Joyasri 💌</div>
+
+  <!-- 🌈 Rainbow Glowing Button -->
+  <button class="memory-btn" onclick="window.location.href='memory.html'">
+    💞 View Our Sweet Memories 💞
+  </button>
+
+  <script>
+    const codeLines = [
+      "#include <stdio.h>",
+      "#include <love.h>",
+      "",
+      "int main() {",
+      "    printf(\"Happy Birthday, Akash! 🎉\\n\");",
+      "    printf(\"You’re not just my code — you’re my whole compiler ❤️\\n\");",
+      "    printf(\"My world executes perfectly when you’re around 💞\\n\");",
+      "    printf(\"Every time you smile, my system overloads with happiness 😍\\n\");",
+      "    printf(\"If I could write love in C, you'd be the only constant 💫\\n\");",
+      "    printf(\"You are the printf() that prints joy in my output 💖\\n\");",
+      "    printf(\"You debug all my sadness and remove every error in my heart 💕\\n\");",
+      "    printf(\"Our love has no semicolon; it never ends ✨\\n\");",
+      "    printf(\"I don’t need <math.h>, because you’re my perfect equation ❤️\\n\");",
+      "    printf(\"Even if the world crashes, my heart will still compile for you 💗\\n\");",
+      "    printf(\"My heart’s CPU always runs on your smile’s power 💓\\n\");",
+      "    printf(\"If love was a pointer, you’d be pointing to my soul 🥰\\n\");",
+      "    printf(\"May our forever() function never return 0; 💞\\n\");",
+      "    printf(\"I LOVE YOU, Akash ❤️\\n\");",
+      "    printf(\"With infinite loops of love,\\n\");",
+      "    printf(\"Joyasri 💌\\n\");",
+      "    return 0;",
+      "}"
+    ];
+
+    const consoleDiv = document.getElementById("console");
+    let line = 0;
+
+    function typeLine() {
+      if (line < codeLines.length) {
+        let i = 0;
+        const currentLine = codeLines[line];
+        const interval = setInterval(() => {
+          consoleDiv.innerHTML += currentLine[i++] || '';
+          if (i >= currentLine.length) {
+            clearInterval(interval);
+            consoleDiv.innerHTML += "\n";
+            line++;
+            setTimeout(typeLine, 200);
+          }
+        }, 40);
+      } else {
+        showLovePopup();
+      }
+    }
+
+    function showLovePopup() {
+      const popup = document.createElement("div");
+      popup.className = "popup";
+      popup.innerHTML = "💞 I LOVE YOU AKASH 💞";
+      document.body.appendChild(popup);
+    }
+
+    // Floating hearts
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = Math.random() > 0.5 ? "💖" : "💞";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }, 250);
+
+    typeLine();
+  </script>
+
+</body>
+</html>
